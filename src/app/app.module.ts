@@ -14,6 +14,8 @@ import {MatIconModule} from "@angular/material/icon";
 import { WeatherComponent } from './weather/weather.component';
 import {HttpClientModule} from "@angular/common/http";
 import { BackgroundComponent } from './background/background.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import {MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
   declarations: [
@@ -21,17 +23,21 @@ import { BackgroundComponent } from './background/background.component';
     ClockComponent,
     GreetingComponent,
     WeatherComponent,
-    BackgroundComponent
+    BackgroundComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
-    FormsModule, NgIf,
+    FormsModule,
+    NgIf,
     MatButtonModule,
     MatIconModule,
-    HttpClientModule, NgOptimizedImage
+    HttpClientModule,
+    NgOptimizedImage,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [BackgroundComponent]

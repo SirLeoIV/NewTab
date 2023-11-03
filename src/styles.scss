@@ -1,4 +1,65 @@
 /* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// base styles
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.padding-small {
+  padding: 5px;
+}
+
+.padding-medium {
+  padding: 10px;
+}
+
+.margin-small {
+  margin: 5px;
+}
+
+.margin-medium {
+  margin: 10px;
+}
+
+// override material styles
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: transparent !important;
+}
+
+.mat-input-underline {
+  color: lightslategray;
+}
+
+.mdc-list-item__primary-text{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+$gray-primary: mat.define-palette(mat.$gray-palette, 400);
+$gray-accent: mat.define-palette(mat.$gray-palette, A200, A100, A400);
+
+// The "warn" palette is optional and defaults to red if not specified.
+$gray-warn: mat.define-palette(mat.$gray-palette);
+
+// Define a gray theme
+$gray-theme: mat.define-light-theme((
+  color: (
+    primary: mat.define-palette($gray-primary),
+    accent: mat.define-palette($gray-accent),
+  ),
+));
+
+@include mat.all-component-themes($gray-theme);
