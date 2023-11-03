@@ -1,0 +1,12 @@
+<div *ngIf="positionEnabled">
+  <span>City: {{ cityString }}</span>
+  <br>
+  <span>Weather-Icon: {{ iconString }}</span>
+  <br>
+  <span>Temperature: {{ temperatureString }}&deg;</span>
+</div>
+<div *ngIf="!positionEnabled">
+  <span>
+    To see the weather, please enable location services for this site.
+  </span>
+</div>
