@@ -33,6 +33,27 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   margin: 10px;
 }
 
+.responsive-top {
+  display: inline-block;
+  padding: 5px;
+  vertical-align: top;
+}
+
+.responsive-center {
+  display: inline-block;
+  padding: 5px;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.v-middle {
+  vertical-align: middle;
+}
+
+.float-right {
+  float: right;
+}
+
 // override material styles
 .mdc-text-field--filled:not(.mdc-text-field--disabled) {
   background-color: transparent !important;

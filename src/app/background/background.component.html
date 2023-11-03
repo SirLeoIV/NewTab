@@ -3,10 +3,14 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center; height: 100%; text-align: center">
-
-  <app-weather></app-weather>
-  <app-clock></app-clock>
-  <app-greeting></app-greeting>
-  <app-search-bar></app-search-bar>
+  <div class="left responsive-top"></div>
+  <div class="center responsive-top">
+    <app-clock></app-clock>
+    <app-greeting></app-greeting>
+    <app-search-bar></app-search-bar>
+  </div>
+  <div class="right responsive-top float-right">
+    <app-weather></app-weather>
+  </div>
 </div>
 
