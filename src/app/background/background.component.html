@@ -2,15 +2,23 @@
   background-image: url('assets/images/Background (1).jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center; height: 100%; text-align: center">
-  <div class="left responsive-top"></div>
-  <div class="center responsive-top">
-    <app-clock></app-clock>
-    <app-greeting></app-greeting>
+  background-position: center center; height: 100%; text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;">
+  <div class="left"></div>
+  <div class="center" style="width: 60%">
+    <div>
+      <app-clock></app-clock>
+      <div class="padding-medium"></div>
+      <app-greeting></app-greeting>
+    </div>
     <app-search-bar></app-search-bar>
   </div>
-  <div class="right responsive-top float-right">
-    <app-weather></app-weather>
+  <div class="right">
+    <div class="padding-medium">
+      <app-weather></app-weather>
+    </div>
   </div>
 </div>
 

@@ -12,7 +12,7 @@ import {timer} from "rxjs";
 export class WeatherComponent implements OnInit {
 
   positionEnabled = false;
-  iconString: string = "Sunny";
+  iconString: string = "sunny";
   cityString: string = "Unknown";
   temperatureString: string = "0";
 

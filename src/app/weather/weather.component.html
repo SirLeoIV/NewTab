@@ -1,9 +1,8 @@
 <div *ngIf="positionEnabled">
-  <span>City: {{ cityString }}</span>
+  <mat-icon fontIcon="sunny"></mat-icon>
+  <span style="font-size: 30px;">{{ temperatureString }}&deg;</span>
   <br>
-  <span>Weather-Icon: {{ iconString }}</span>
-  <br>
-  <span>Temperature: {{ temperatureString }}&deg;</span>
+  <span>{{ cityString }}</span>
 </div>
 <div *ngIf="!positionEnabled">
   <span>
