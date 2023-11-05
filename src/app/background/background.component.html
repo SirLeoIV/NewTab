@@ -1,22 +1,30 @@
 <div style="
-  background-image: url('assets/images/Background (1).jpg');
+  background-image: url('assets/images/Background (2).jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center; height: 100%; text-align: center;
+  background-position: center center;
+  height: 100%;
+  text-align: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;">
-  <div class="left"></div>
+  <div class="left" style="width: max(min(300px, 20%), 150px)">
+    <div style="margin-left: 20px">
+      <app-search-bar></app-search-bar>
+    </div>
+    <div style="position: absolute;z-index:10; top:60px;left:15px; width: max(min(300px, 25%), 200px)">
+      <app-links></app-links>
+    </div>
+  </div>
   <div class="center" style="width: 60%">
     <div>
       <app-clock></app-clock>
-      <div class="padding-medium"></div>
+      <div class="padding-small-dynamic"></div>
       <app-greeting></app-greeting>
     </div>
-    <app-search-bar></app-search-bar>
   </div>
-  <div class="right">
-    <div class="padding-medium">
+  <div class="right" style="width: 18%;">
+    <div class="padding-medium text-right">
       <app-weather></app-weather>
     </div>
   </div>

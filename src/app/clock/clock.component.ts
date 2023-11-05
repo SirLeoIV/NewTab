@@ -15,8 +15,7 @@ export class ClockComponent implements OnInit {
     const time = new Date();
     const hoursString = time.getHours() < 10 ? "0" + time.getHours() : "" + time.getHours();
     const minutesString = time.getMinutes() < 10 ? "0" + time.getMinutes() : "" + time.getMinutes();
-    const secondsString = time.getSeconds() < 10 ? "0" + time.getSeconds() : "" + time.getSeconds();
-    this.timeString = hoursString + ":" + minutesString + ":" + secondsString;
+    this.timeString = hoursString + ":" + minutesString;
   }
 
 

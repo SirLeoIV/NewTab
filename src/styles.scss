@@ -22,6 +22,10 @@ body {
   font-weight: bold;
 }
 
+.lightgray {
+  color: lightgray !important;
+}
+
 .font-small {
   font-size: 12px;
 }
@@ -42,16 +46,34 @@ body {
   font-size: 60px;
 }
 
+.f-large {
+  font-size: large;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.pointer :hover {color: lightgray !important;}
+
 .dynamic-font-large {
-  font-size: max(5vw, 24px);
+  font-size: min(max(4vw, 24px), 96px);
 }
 
 .dynamic-font-xlarge {
-  font-size: max(10vw, 48px);
+  font-size: min(max(10vw, 48px), 192px);
 }
 
 .no-wrap {
   text-wrap: nowrap;
+}
+
+.light-text-shadow {
+  text-shadow: 0px 0px 20px rgb(0 0 0 / 20%);
+}
+
+.dark-text-shadow {
+  text-shadow: 0px 0px 20px rgb(0 0 0 / 80%);
 }
 
 .padding-small {
@@ -60,6 +82,10 @@ body {
 
 .padding-medium {
   padding: 10px;
+}
+
+.padding-small-dynamic {
+  padding: max(2vw, 10px);
 }
 
 .margin-small {
@@ -112,6 +138,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+}
+
+::ng-deep .mat-tab-header {
+  display: none!important;
 }
 
 $gray-primary: mat.define-palette(mat.$gray-palette, 400);
