@@ -11,6 +11,8 @@
         <mat-label class="lightgray">Name</mat-label>
         <input matInput class="lightgray" placeholder="Your Name" [(ngModel)]="name">
       </mat-form-field>
+      <br>
+      <button mat-raised-button class="lightgray" style="background-color: rgba(79,79,79,0.59)" (click)="newBackground()">Next Background</button>
     </mat-card-content>
     <mat-card-actions>
       <button mat-button class="lightgray" (click)="saveSettings()">save</button>

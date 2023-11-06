@@ -29,4 +29,7 @@ export class SettingsComponent {
     this.showSettings ? this.exitSettings() : this.showSettings = true;
   }
 
+  newBackground() {
+    this.observableService.triggerNewBackground();
+  }
 }

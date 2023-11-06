@@ -14,7 +14,7 @@ export class QuoteComponent implements OnInit {
   hoverIcon: boolean = false;
 
   ngOnInit(): void {
-    let lastChange = localStorage.getItem("lastChange");
+    let lastChange = localStorage.getItem("lastQuoteChange");
     this.quote = localStorage.getItem("quote") ? JSON.parse(localStorage.getItem("quote")!) : this.quote;
     if (lastChange == null || lastChange != new Date().getDay().toString()) {
       this.setRandomQuote();
@@ -26,6 +26,6 @@ export class QuoteComponent implements OnInit {
     let index = Math.floor(Math.random() * quotes.length);
     this.quote = quotes[index];
     localStorage.setItem("quote", JSON.stringify(this.quote));
-    localStorage.setItem("lastChange", new Date().getDay().toString());
+    localStorage.setItem("lastQuoteChange", new Date().getDay().toString());
   }
 }

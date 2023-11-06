@@ -1,13 +1,10 @@
 <div style="
-  background-image: url('assets/images/Background (5).jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
   height: 100%;
   text-align: center;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;">
+  justify-content: space-between;"
+  [ngStyle]="getBackgroundStyle()">
   <div class="left" style="
     width: max(min(300px, 20%), 150px);
     display: flex;
@@ -18,7 +15,7 @@
     <div style="margin-left: 20px">
       <app-search-bar></app-search-bar>
     </div>
-    <div style="position: absolute;z-index:10; top:60px;left:15px; width: max(min(300px, 25%), 200px)">
+    <div style="position: absolute;z-index:10; top:70px; left:15px; width: max(min(300px, 25%), 200px)">
       <app-links></app-links>
     </div>
   </div>
