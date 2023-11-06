@@ -22,6 +22,8 @@ import {CdkDrag, CdkDropList} from "@angular/cdk/drag-drop";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatChipsModule} from "@angular/material/chips";
+import {SettingsComponent} from './settings/settings.component';
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import {MatChipsModule} from "@angular/material/chips";
     WeatherComponent,
     BackgroundComponent,
     SearchBarComponent,
-    LinksComponent
+    LinksComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,8 @@ import {MatChipsModule} from "@angular/material/chips";
     CdkDrag,
     MatTooltipModule,
     MatTabsModule,
-    MatChipsModule
+    MatChipsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [BackgroundComponent]

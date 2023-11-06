@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {timer} from "rxjs";
+import {ObservableService} from "../observable.service";
 
 @Component({
   selector: 'app-greeting',
@@ -16,6 +17,12 @@ export class GreetingComponent implements OnInit {
     "Good afternoon",
     "Good evening"
   ];
+
+  constructor(private observableService: ObservableService) {
+    this.observableService.reloadTrigger$.subscribe(() => {
+      this.updateName();
+    });
+  }
 
   setGreeting() {
     let date = new Date();
@@ -39,11 +46,6 @@ export class GreetingComponent implements OnInit {
     timer(0, 1000).subscribe(() => {
       this.setGreeting();
     });
-  }
-
-  setName(name: string) {
-    localStorage.setItem("name", name);
-    this.updateName();
   }
 
   updateName() {

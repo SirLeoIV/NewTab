@@ -1,0 +1,23 @@
+<div class="text-left">
+  <mat-card *ngIf="showSettings"
+            class="margin-medium"
+            style="background-color: rgba(0,0,0,0.7); color: lightgray;">
+    <mat-card-header>
+      <mat-card-title>Settings</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="text-left">
+      <p>Some app settings</p>
+      <mat-form-field>
+        <mat-label class="lightgray">Name</mat-label>
+        <input matInput class="lightgray" placeholder="Your Name" [(ngModel)]="name">
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button class="lightgray" (click)="saveSettings()">save</button>
+      <button mat-button class="lightgray" (click)="exitSettings()">exit</button>
+    </mat-card-actions>
+  </mat-card>
+  <button mat-icon-button (click)="toggleSettings()">
+    <mat-icon>settings</mat-icon>
+  </button>
+</div>

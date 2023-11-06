@@ -8,12 +8,21 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;">
-  <div class="left" style="width: max(min(300px, 20%), 150px)">
+  <div class="left" style="
+    width: max(min(300px, 20%), 150px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;"
+  >
     <div style="margin-left: 20px">
       <app-search-bar></app-search-bar>
     </div>
     <div style="position: absolute;z-index:10; top:60px;left:15px; width: max(min(300px, 25%), 200px)">
       <app-links></app-links>
+    </div>
+    <div style="position: absolute; z-index: 15; bottom: 20px; left: 15px">
+      <app-settings></app-settings>
     </div>
   </div>
   <div class="center" style="width: 60%">
@@ -24,7 +33,7 @@
     </div>
   </div>
   <div class="right" style="width: 18%;">
-    <div class="padding-medium text-right">
+    <div class="padding-medium text-right margin-medium">
       <app-weather></app-weather>
     </div>
   </div>
