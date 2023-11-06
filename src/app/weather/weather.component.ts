@@ -160,4 +160,16 @@ export class WeatherComponent implements OnInit {
     return WeatherIcons.SUNNY;
   }
 
+
+  openWeather($event: MouseEvent) {
+    const url = "https://www.google.com/search?q=weather";
+    if ($event.which == 3) return;
+    if ($event.ctrlKey) {
+      window.open(url, '_blank');
+    } else if ($event.which == 2) {
+      window.open(url, '_blank');
+    } else {
+      window.open(url, '_self');
+    }
+  }
 }

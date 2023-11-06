@@ -1,11 +1,13 @@
-<div *ngIf="positionEnabled">
-  <mat-icon fontIcon="sunny"></mat-icon>
-  <span style="font-size: 30px;">{{ temperatureString }}&deg;</span>
-  <br>
-  <span>{{ cityString }}</span>
-</div>
-<div *ngIf="!positionEnabled">
+<div (click)="openWeather($event)">
+  <div *ngIf="positionEnabled">
+    <mat-icon fontIcon="sunny"></mat-icon>
+    <span style="font-size: 30px;">{{ temperatureString }}&deg;</span>
+    <br>
+    <span>{{ cityString }}</span>
+  </div>
+  <div *ngIf="!positionEnabled">
   <span>
     To see the weather, please enable location services for this site.
   </span>
+  </div>
 </div>
