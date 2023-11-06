@@ -24,6 +24,7 @@ import {MatTabsModule} from "@angular/material/tabs";
 import {MatChipsModule} from "@angular/material/chips";
 import {SettingsComponent} from './settings/settings.component';
 import {MatCardModule} from "@angular/material/card";
+import {QuoteComponent} from './quote/quote.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {MatCardModule} from "@angular/material/card";
     BackgroundComponent,
     SearchBarComponent,
     LinksComponent,
-    SettingsComponent
+    SettingsComponent,
+    QuoteComponent
   ],
   imports: [
     BrowserModule,

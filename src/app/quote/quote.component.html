@@ -1,0 +1,14 @@
+<div (mouseover)="hover = true" (mouseleave)="hover = false" style=" transition-duration: 1s">
+  <span class="font-medium">{{ quote.quote }}</span>
+  <div style="display: flex; align-items: center; justify-content: center">
+    <span class="font-small lightgray-transparent" *ngIf="hover"> - {{ quote.author }}</span>
+    <mat-icon *ngIf="hover"
+              style="transform: scale(0.8)"
+              class="margin-small"
+              (mouseover)="hoverIcon = true"
+              (mouseleave)="hoverIcon = false"
+              [ngClass]="hoverIcon ?'lightgray' : 'lightgray-transparent'"
+              (click)="setRandomQuote()">
+      autorenew</mat-icon>
+  </div>
+</div>

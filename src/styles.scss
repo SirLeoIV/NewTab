@@ -26,12 +26,20 @@ body {
   color: lightgray !important;
 }
 
+.lightgray-transparent {
+  color: rgb(211 211 211 / 80%) !important;
+}
+
+.lightgray-transparent-2 {
+  color: rgb(211 211 211 / 60%) !important;
+}
+
 .font-small {
-  font-size: 12px;
+  font-size: 18px;
 }
 
 .font-medium {
-  font-size: 24px;
+  font-size: 22px;
 }
 
 .font-large {
@@ -55,6 +63,14 @@ body {
 }
 
 .pointer :hover {color: lightgray !important;}
+
+.dynamic-font-small {
+  font-size: min(max(1vw, 12px), 48px);
+}
+
+.dynamic-font-medium {
+  font-size: min(max(2vw, 16px), 64px);
+}
 
 .dynamic-font-large {
   font-size: min(max(4vw, 24px), 96px);
