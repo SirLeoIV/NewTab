@@ -1,5 +1,5 @@
 <div (mouseover)="hover = true" (mouseleave)="hover = false" style=" transition-duration: 1s">
-  <span class="font-medium">{{ quote.quote }}</span>
+  <span class="font-medium dark-text-shadow">{{ quote.quote }}</span>
   <div style="display: flex; align-items: center; justify-content: center">
     <span class="font-small lightgray-transparent" *ngIf="hover"> - {{ quote.author }}</span>
     <mat-icon *ngIf="hover"
