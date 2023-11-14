@@ -1,0 +1,14 @@
+<div>
+  <div style="text-align: center">
+    <span *ngIf="!gameActive">Start on space</span>
+    <div style="text-align: center">Score: {{score}}</div>
+    <div style="text-align: center">High-Score: {{highScore}}</div>
+  </div>
+  <div class="game">
+    <table style="border: solid 1px black">
+      <tr *ngFor="let row of game">
+        <td *ngFor="let cell of row" [ngClass]="cell"><div [ngClass]="cellClass" style="width: 100%; height: 100%"></div></td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "New Tab by Leo Ebeling",
+  "version": "1.0",
+  "description": "New Tab Extension by Leo Ebeling",
+
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+
+  "permissions": [
+    "activeTab",
+    "geolocation"
+  ]
+}

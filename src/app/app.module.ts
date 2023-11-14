@@ -25,6 +25,11 @@ import {MatChipsModule} from "@angular/material/chips";
 import {SettingsComponent} from './settings/settings.component';
 import {MatCardModule} from "@angular/material/card";
 import {QuoteComponent} from './quote/quote.component';
+import {SnakeComponent} from './games/snake/snake.component';
+import {GamesComponent} from './games/games.component';
+import {MatSliderModule} from "@angular/material/slider";
+import {RunnerComponent} from './games/runner/runner.component';
+import {GameOfLifeComponent} from './games/game-of-life/game-of-life.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +41,11 @@ import {QuoteComponent} from './quote/quote.component';
     SearchBarComponent,
     LinksComponent,
     SettingsComponent,
-    QuoteComponent
+    QuoteComponent,
+    SnakeComponent,
+    GamesComponent,
+    RunnerComponent,
+    GameOfLifeComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +66,8 @@ import {QuoteComponent} from './quote/quote.component';
     MatTooltipModule,
     MatTabsModule,
     MatChipsModule,
-    MatCardModule
+    MatCardModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [BackgroundComponent]

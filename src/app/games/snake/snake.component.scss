@@ -1,0 +1,30 @@
+table, tr, td {
+  margin: auto;
+}
+
+td {
+  width: 20px;
+  height: 20px;
+}
+
+.game {
+  padding: 20px;
+  text-align: center;
+  margin: auto;
+}
+
+.off {
+  background-color: rgba(180, 180, 180, 0.5);
+}
+
+.on {
+  background-color: rgba(144, 238, 144, 0.7);
+}
+
+.food {
+  background-color: rgba(205, 92, 92, 0.5);
+}
+
+.inactive {
+  background-color: rgba(90, 90, 90, 0.1);
+}
