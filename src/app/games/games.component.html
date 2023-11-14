@@ -1,5 +1,7 @@
 <div class="text-right">
-  <mat-tab-group headerPosition="below" *ngIf="gamesOpen">
+  <mat-tab-group headerPosition="below" *ngIf="gamesOpen"
+                 [selectedIndex]="selectedGame"
+                 (selectedIndexChange)="selectGame($event.valueOf())">
     <mat-tab label="Snake">
       <app-snake></app-snake>
     </mat-tab>
