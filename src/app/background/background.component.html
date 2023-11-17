@@ -20,14 +20,19 @@
     </div>
   </div>
   <div class="center" style="width: 60%">
-    <div>
+    <div style="position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;">
       <app-clock></app-clock>
       <div class="padding-small-dynamic"></div>
       <app-greeting></app-greeting>
     </div>
   </div>
   <div class="right" style="width: 18%;">
-    <div class="padding-medium text-right margin-medium">
+    <div class="padding-medium text-right margin-small"
+         style="position: absolute; z-index:10; top:10px; right:10px;">
       <app-weather></app-weather>
     </div>
   </div>
