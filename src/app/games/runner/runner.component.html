@@ -1,1 +1,35 @@
-<p>runner works!</p>
+<div class="text-right">
+  <div>
+    <p>runner works!</p>
+    {{ action }}
+    <br>
+    current floor = {{ currentFloor }}
+    <br>
+    current state = {{ state.toString() }}
+    <br>
+    y = {{ y }}
+    <br>
+    active floors:
+    <div *ngFor="let floor of activeFloors let i = index">
+        <span *ngIf="floor" class="current-floor">{{ i }}</span>
+    </div>
+    <br>
+    next switch = {{ (sceneSwitchInterval - (gameTime - lastSceneSwitch))/1000 | number: '1.0-0' }}s
+    <br>
+  </div>
+  <div #game [style.width]="width + 'px'" style="height: 200px; background-color: rgba(211,211,211,0.42)">
+    <div #player class="player"
+         [style.left]="x + 'px'"
+         [style.bottom]="y*2 + 'px'"
+         [style.height]="(state === State.DUCKING) ? '8px' : '15px'"
+          [style.width]="(state === State.DUCKING) ? '12px' : '8px'"
+         style="background-color: red; position: absolute"></div>
+    <div #floor class="floor" *ngFor="let floor of activeFloors let i = index"
+         [style.left]="getLeftOfFloor(i) + 'px'"
+         [style.bottom]="floors[i]*2 + 'px'"
+         [style.height]="'2px'"
+         [style.width]="getWidthOfFloor(i) + 'px'"
+         [style.background-color]="floor ? '#0a0a48' : '#0a0a48'"
+         style="position: absolute"></div>
+  </div>
+</div>
