@@ -3,9 +3,10 @@ import {timer} from "rxjs";
 import {ObservableService} from "../observable.service";
 
 @Component({
-  selector: 'app-greeting',
-  templateUrl: './greeting.component.html',
-  styleUrls: ['./greeting.component.scss']
+    selector: 'app-greeting',
+    templateUrl: './greeting.component.html',
+    styleUrls: ['./greeting.component.scss'],
+    standalone: false
 })
 export class GreetingComponent implements OnInit {
 

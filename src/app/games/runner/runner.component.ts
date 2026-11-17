@@ -2,9 +2,10 @@ import {Component, HostListener, OnInit} from '@angular/core';
 import {Action, State} from "./model";
 
 @Component({
-  selector: 'app-runner',
-  templateUrl: './runner.component.html',
-  styleUrls: ['./runner.component.scss']
+    selector: 'app-runner',
+    templateUrl: './runner.component.html',
+    styleUrls: ['./runner.component.scss'],
+    standalone: false
 })
 export class RunnerComponent implements OnInit {
 

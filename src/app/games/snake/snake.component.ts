@@ -1,9 +1,10 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-snake',
-  templateUrl: './snake.component.html',
-  styleUrls: ['./snake.component.scss']
+    selector: 'app-snake',
+    templateUrl: './snake.component.html',
+    styleUrls: ['./snake.component.scss'],
+    standalone: false
 })
 export class SnakeComponent implements OnInit {
 

@@ -3,9 +3,10 @@ import {QuoteObject} from "./QuoteObject";
 import * as quotesData from '../../assets/data/quotes.json';
 
 @Component({
-  selector: 'app-quote',
-  templateUrl: './quote.component.html',
-  styleUrls: ['./quote.component.scss']
+    selector: 'app-quote',
+    templateUrl: './quote.component.html',
+    styleUrls: ['./quote.component.scss'],
+    standalone: false
 })
 export class QuoteComponent implements OnInit {
 

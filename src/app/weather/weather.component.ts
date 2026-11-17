@@ -5,9 +5,10 @@ import {WeatherIcons} from "./WeatherIconsEnum";
 import {timer} from "rxjs";
 
 @Component({
-  selector: 'app-weather',
-  templateUrl: './weather.component.html',
-  styleUrls: ['./weather.component.scss']
+    selector: 'app-weather',
+    templateUrl: './weather.component.html',
+    styleUrls: ['./weather.component.scss'],
+    standalone: false
 })
 export class WeatherComponent implements OnInit {
 

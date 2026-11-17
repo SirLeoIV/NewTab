@@ -2,9 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {ObservableService} from "../observable.service";
 
 @Component({
-  selector: 'app-background',
-  templateUrl: './background.component.html',
-  styleUrls: ['./background.component.scss']
+    selector: 'app-background',
+    templateUrl: './background.component.html',
+    styleUrls: ['./background.component.scss'],
+    standalone: false
 })
 export class BackgroundComponent implements OnInit{
 

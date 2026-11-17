@@ -1,16 +1,17 @@
 import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-games',
-  templateUrl: './games.component.html',
-  styleUrls: ['./games.component.scss']
+    selector: 'app-games',
+    templateUrl: './games.component.html',
+    styleUrls: ['./games.component.scss'],
+    standalone: false
 })
 export class GamesComponent implements OnInit {
   gamesOpen: boolean = false;
   selectedGame: number = 1;
 
   ngOnInit(): void {
-    this.gamesOpen = localStorage.getItem("gamesOpen" || "false") == "true";
+    this.gamesOpen = localStorage.getItem("gamesOpen") == "true";
     this.selectedGame = parseInt(localStorage.getItem("selectedGame") || "1");
   }
 

@@ -3,9 +3,10 @@ import {CdkDragDrop, moveItemInArray} from "@angular/cdk/drag-drop";
 import {Link} from "./LinkObject";
 
 @Component({
-  selector: 'app-links',
-  templateUrl: './links.component.html',
-  styleUrls: ['./links.component.scss']
+    selector: 'app-links',
+    templateUrl: './links.component.html',
+    styleUrls: ['./links.component.scss'],
+    standalone: false
 })
 export class LinksComponent implements OnInit {
 
