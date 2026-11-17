@@ -164,17 +164,17 @@ body {
   display: none!important;
 }
 
-$gray-primary: mat.define-palette(mat.$gray-palette, 400);
-$gray-accent: mat.define-palette(mat.$gray-palette, A200, A100, A400);
+$gray-primary: mat.m2-define-palette(mat.$m2-gray-palette, 400);
+$gray-accent: mat.m2-define-palette(mat.$m2-gray-palette, A200, A100, A400);
 
 // The "warn" palette is optional and defaults to red if not specified.
-$gray-warn: mat.define-palette(mat.$gray-palette);
+$gray-warn: mat.m2-define-palette(mat.$m2-gray-palette);
 
 // Define a gray theme
-$gray-theme: mat.define-light-theme((
+$gray-theme: mat.m2-define-light-theme((
   color: (
-    primary: mat.define-palette($gray-primary),
-    accent: mat.define-palette($gray-accent),
+    primary: mat.m2-define-palette($gray-primary),
+    accent: mat.m2-define-palette($gray-accent),
   ),
 ));
 
