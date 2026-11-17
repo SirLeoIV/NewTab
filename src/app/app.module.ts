@@ -12,7 +12,7 @@ import {NgFor, NgIf, NgOptimizedImage} from "@angular/common";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {WeatherComponent} from './weather/weather.component';
-import {HttpClientModule} from "@angular/common/http";
+import { provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
 import {BackgroundComponent} from './background/background.component';
 import {SearchBarComponent} from './search-bar/search-bar.component';
 import {MatMenuModule} from "@angular/material/menu";
@@ -31,45 +31,38 @@ import {MatSliderModule} from "@angular/material/slider";
 import {RunnerComponent} from './games/runner/runner.component';
 import {GameOfLifeComponent} from './games/game-of-life/game-of-life.component';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    ClockComponent,
-    GreetingComponent,
-    WeatherComponent,
-    BackgroundComponent,
-    SearchBarComponent,
-    LinksComponent,
-    SettingsComponent,
-    QuoteComponent,
-    SnakeComponent,
-    GamesComponent,
-    RunnerComponent,
-    GameOfLifeComponent
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    FormsModule,
-    NgIf,
-    MatButtonModule,
-    MatIconModule,
-    HttpClientModule,
-    NgOptimizedImage,
-    MatMenuModule,
-    MatExpansionModule,
-    CdkDropList,
-    NgFor,
-    CdkDrag,
-    MatTooltipModule,
-    MatTabsModule,
-    MatChipsModule,
-    MatCardModule,
-    MatSliderModule
-  ],
-  providers: [],
-  bootstrap: [BackgroundComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        ClockComponent,
+        GreetingComponent,
+        WeatherComponent,
+        BackgroundComponent,
+        SearchBarComponent,
+        LinksComponent,
+        SettingsComponent,
+        QuoteComponent,
+        SnakeComponent,
+        GamesComponent,
+        RunnerComponent,
+        GameOfLifeComponent
+    ],
+    bootstrap: [BackgroundComponent], imports: [BrowserModule,
+        BrowserAnimationsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        FormsModule,
+        NgIf,
+        MatButtonModule,
+        MatIconModule,
+        NgOptimizedImage,
+        MatMenuModule,
+        MatExpansionModule,
+        CdkDropList,
+        NgFor,
+        CdkDrag,
+        MatTooltipModule,
+        MatTabsModule,
+        MatChipsModule,
+        MatCardModule,
+        MatSliderModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }

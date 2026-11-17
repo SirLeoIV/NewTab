@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {LocationData, WeatherData} from "./WeatherObjects";
-import {HttpClient} from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import {WeatherIcons} from "./WeatherIconsEnum";
 import {timer} from "rxjs";
 
