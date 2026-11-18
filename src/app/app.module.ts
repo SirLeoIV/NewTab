@@ -28,8 +28,8 @@ import {QuoteComponent} from './quote/quote.component';
 import {SnakeComponent} from './games/snake/snake.component';
 import {GamesComponent} from './games/games.component';
 import {MatSliderModule} from "@angular/material/slider";
-import {RunnerComponent} from './games/runner/runner.component';
 import {GameOfLifeComponent} from './games/game-of-life/game-of-life.component';
+import { CardsComponent } from "./games/cards/cards.component";
 
 @NgModule({ declarations: [
         AppComponent,
@@ -43,26 +43,25 @@ import {GameOfLifeComponent} from './games/game-of-life/game-of-life.component';
         QuoteComponent,
         SnakeComponent,
         GamesComponent,
-        RunnerComponent,
         GameOfLifeComponent
     ],
     bootstrap: [BackgroundComponent], imports: [BrowserModule,
-        BrowserAnimationsModule,
-        MatFormFieldModule,
-        MatInputModule,
-        FormsModule,
-        NgIf,
-        MatButtonModule,
-        MatIconModule,
-        NgOptimizedImage,
-        MatMenuModule,
-        MatExpansionModule,
-        CdkDropList,
-        NgFor,
-        CdkDrag,
-        MatTooltipModule,
-        MatTabsModule,
-        MatChipsModule,
-        MatCardModule,
-        MatSliderModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    NgIf,
+    MatButtonModule,
+    MatIconModule,
+    NgOptimizedImage,
+    MatMenuModule,
+    MatExpansionModule,
+    CdkDropList,
+    NgFor,
+    CdkDrag,
+    MatTooltipModule,
+    MatTabsModule,
+    MatChipsModule,
+    MatCardModule,
+    MatSliderModule, CardsComponent], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }

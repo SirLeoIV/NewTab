@@ -1,0 +1,94 @@
+<div class="solitaire">
+  <div class="bar">
+    <span>Moves: {{ moves }}</span>
+    <button type="button" (click)="newGame()">New game</button>
+  </div>
+
+  @if (won) {
+    <div class="win">
+      <div class="win-box">
+        <div class="win-title">You won!</div>
+        <div class="win-stats">
+          <span>Moves: {{ moves }}</span>
+          <span>Best: {{ best }}</span>
+        </div>
+        @if (newBest) {
+          <div class="win-note">New best score</div>
+        }
+        <button type="button" (click)="newGame()">Play again</button>
+      </div>
+    </div>
+  }
+
+  <!-- top row: stock, waste, (gap), 4 foundations -->
+  <div class="grid top">
+    <div class="slot" (click)="onStock()">
+      @if (stock.length) {
+      <div class="card back"></div>
+      } @else {
+      <div class="placeholder recycle">&#8635;</div>
+      }
+    </div>
+
+    <div class="slot">
+      @if (waste.length) {
+        <div class="card face" draggable="false"
+             [class.red]="isRed(waste[waste.length - 1])"
+             [class.selected]="isSelected('waste', 0, waste.length - 1)"
+             (click)="onWaste($event)"
+             (dblclick)="onAutoMove('waste', 0, $event)">
+          <span class="rank">{{ label(waste[waste.length - 1]) }}{{ symbol(waste[waste.length - 1]) }}</span>
+        </div>
+      } @else {
+      <div class="placeholder"></div>
+      }
+    </div>
+
+    <div class="slot gap"></div>
+
+    @for (f of foundations; track $index; let i = $index) {
+    <div class="slot" (click)="onFoundation(i)">
+      @if (f.length) {
+        <div class="card face"
+             [class.red]="isRed(f[f.length - 1])"
+             [class.selected]="isSelected('foundation', i, f.length - 1)">
+          <span class="rank">{{ label(f[f.length - 1]) }}{{ symbol(f[f.length - 1]) }}</span>
+        </div>
+    } @else {
+    <div class="placeholder">A</div>
+    }
+    </div>
+    }
+  </div>
+
+  <!-- tableau -->
+  <div class="grid tableau">
+    @for (col of tableau; track $index; let c = $index) {
+      <div class="column" (click)="onColumn(c)">
+        @if (!col.length) {
+          <div class="placeholder">K</div>
+        }
+        <div class="stack" [style.--total]="total(c)">
+          @for (card of col; track $index; let r = $index) {
+            @if (card.faceUp) {
+              <div class="card face"
+                   [class.red]="isRed(card)"
+                   [class.covered]="r < col.length - 1"
+                   [style.--pos]="pos(c, r)"
+                   [style.--step]="step(c, r)"
+                   [class.selected]="isSelected('tableau', c, r)"
+                   (click)="onTableauCard(c, r, $event)"
+                   (dblclick)="onAutoMove('tableau', c, $event)">
+                <span class="rank">{{ label(card) }}{{ symbol(card) }}</span>
+              </div>
+            } @else {
+              <div class="card back covered"
+                   [style.--pos]="pos(c, r)"
+                   [style.--step]="step(c, r)"></div>
+            }
+          }
+        </div>
+      </div>
+    }
+  </div>
+</div>

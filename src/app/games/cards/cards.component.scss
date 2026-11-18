@@ -1,0 +1,190 @@
+:host {
+  display: block;
+  width: 100%;
+  height: var(--solitaire-height, 280px); // <- set your fixed height here
+  zoom: var(--solitaire-scale, 1.4);
+  overflow: hidden;                      // no scrollbar
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.solitaire {
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 6px;
+  color: #fff;
+  font-size: 12px;
+}
+
+.bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+
+  button {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: inherit;
+    border-radius: 4px;
+    padding: 2px 8px;
+    cursor: pointer;
+
+    &:hover { background: rgba(255, 255, 255, 0.3); }
+  }
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+
+  &.top { flex: none; margin-bottom: 8px; align-items: start; }
+
+  &.tableau {
+    flex: 1;
+    min-height: 0;
+    grid-template-rows: minmax(0, 1fr);
+  }
+}
+
+.slot { position: relative; min-width: 0; aspect-ratio: 5 / 7; }
+
+.column {
+  position: relative;
+  min-width: 0;
+  container-type: size;   // lets the stack measure the available height
+}
+
+.stack {
+  position: absolute;
+  inset: 0;
+  // a card is 140cqw tall; the rest of the column is the room for overlap.
+  // k = length of one spacing unit: 1cqw normally, smaller when the stack is tall
+  --k: calc(min(100cqh - 140cqw, var(--total) * 1cqw) / var(--total));
+
+  .card {
+    position: absolute;
+    left: 0;
+    top: max(0px, calc(var(--pos) * var(--k)));
+  }
+
+  .card.covered {
+    aspect-ratio: auto;
+    height: calc(var(--step) * var(--k));
+  }
+}
+
+.column > .placeholder { position: absolute; top: 0; left: 0; }
+.column:empty { aspect-ratio: 5 / 7; }
+
+.card {
+  display: block;
+  width: 100%;
+  aspect-ratio: 5 / 7;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px);
+  cursor: pointer;
+
+  // face-down: just a faint outline
+  &.back {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.35);
+    cursor: default;
+  }
+
+  // covered cards in a stack share their border with the next card
+  &.covered { border-bottom: none; border-radius: 4px 4px 0 0; }
+
+  &.face {
+    container-type: inline-size;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 600;
+    line-height: 1;
+
+    &.red { color: #ff9a9a; }
+
+    .rank {
+      font-size: 36cqw;
+      white-space: nowrap;
+    }
+  }
+
+  &.selected {
+    border: 2px solid #ffd54a;
+    background: rgba(255, 213, 74, 0.18);
+  }
+}
+
+// stock pile is clickable even though the card back isn't selectable
+.slot > .card.back { cursor: pointer; }
+
+.placeholder {
+  width: 100%;
+  aspect-ratio: 5 / 7;
+  box-sizing: border-box;
+  border: 1px dashed rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+}
+
+.slot.gap { visibility: hidden; }
+
+.win {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.win-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  text-align: center;
+
+  .win-title { font-size: 20px; font-weight: 600; }
+
+  .win-stats {
+    display: flex;
+    gap: 14px;
+    font-size: 12px;
+    opacity: 0.85;
+  }
+
+  .win-note { font-size: 12px; color: #ffd54a; }
+
+  button {
+    margin-top: 4px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+    color: inherit;
+    padding: 3px 12px;
+    cursor: pointer;
+
+    &:hover { background: rgba(255, 255, 255, 0.3); }
+  }
+}

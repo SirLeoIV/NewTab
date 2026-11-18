@@ -28,7 +28,7 @@ export class BackgroundComponent implements OnInit{
   }
 
   setRandomBackground() {
-    let index = Math.floor(Math.random() * 89) + 1;
+    let index = Math.floor(Math.random() * 146) + 1;
     this.setBackGround(index);
     localStorage.setItem("backgroundId", index.toString());
     localStorage.setItem("lastBackgroundChange", new Date().getDay().toString());

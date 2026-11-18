@@ -23,7 +23,7 @@ export class QuoteComponent implements OnInit {
   }
 
   setRandomQuote() {
-    let quotes: QuoteObject[] = quotesData;
+    let quotes: QuoteObject[] = (quotesData as any).default;
     let index = Math.floor(Math.random() * quotes.length);
     this.quote = quotes[index];
     localStorage.setItem("quote", JSON.stringify(this.quote));
